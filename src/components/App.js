@@ -5,20 +5,13 @@ import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from '../reducers';
 import LoginForm from './LoginForm';
+import firebaseConfig from './firebaseConfig';
 
 type Props = {};
 export default class App extends Component<Props> {
 
   componentWillMount() {
-    const config = {
-      apiKey: 'AIzaSyAXM-BE5fhw6xR-PoYQVrKKTNquE1jTIR4',
-      authDomain: 'manager-b5b99.firebaseapp.com',
-      databaseURL: 'https://manager-b5b99.firebaseio.com',
-      projectId: 'manager-b5b99',
-      storageBucket: 'manager-b5b99.appspot.com',
-      messagingSenderId: '963783201163'
-    };
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseConfig);
   }
 
   render() {
